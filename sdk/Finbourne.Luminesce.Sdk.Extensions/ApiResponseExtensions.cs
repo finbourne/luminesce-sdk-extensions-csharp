@@ -11,7 +11,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions
         /// <summary>
         /// The header that the request id is contained within.
         /// </summary>
-        public const string RequestIdHeader = "luminesce-meta-requestId";
+        public const string RequestIdHeader = "website-meta-requestId";
         
         /// <summary>
         /// The header that the Date Time Offset is contained within.
