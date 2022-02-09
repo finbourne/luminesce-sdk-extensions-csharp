@@ -20,4 +20,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Finbourne.Luminesce.Sdk.Extensions\Finbourne.Luminesce.Sdk.Extensions.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="secrets.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
