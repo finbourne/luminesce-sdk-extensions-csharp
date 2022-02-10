@@ -16,68 +16,27 @@ namespace Finbourne.Luminesce.Sdk.Extensions.Tutorials
             _factory = IntegrationTestApiFactoryBuilder.CreateApiFactory("secrets.json");
         }
 
+        /* Add this test for each Api within Finbourne.Luminesce.Sdk.Api
         [Test]
-        public void Create_ApplicationMetadataApi()
+        public void Create_XXXApi()
         {
-            var api = _factory.Api<ApplicationMetadataApi>();
+            var api = _factory.Api<XXXApi>();
 
             Assert.That(api, Is.Not.Null);
-            Assert.That(api, Is.InstanceOf<ApplicationMetadataApi>());
+            Assert.That(api, Is.InstanceOf<XXXApi>());
         }
+        */
 
-        [Test]
-        public void Create_CurrentTableFieldCatalogApi()
-        {
-            var api = _factory.Api<CurrentTableFieldCatalogApi>();
-
-            Assert.That(api, Is.Not.Null);
-            Assert.That(api, Is.InstanceOf<CurrentTableFieldCatalogApi>());
-        }
-
-        [Test]
-        public void Create_HistoricallyExecutedQueriesApi()
-        {
-            var api = _factory.Api<HistoricallyExecutedQueriesApi>();
-
-            Assert.That(api, Is.Not.Null);
-            Assert.That(api, Is.InstanceOf<HistoricallyExecutedQueriesApi>());
-        }
-
-        [Test]
-        public void Create_MultiQueryExecutionApi()
-        {
-            var api = _factory.Api<MultiQueryExecutionApi>();
-
-            Assert.That(api, Is.Not.Null);
-            Assert.That(api, Is.InstanceOf<MultiQueryExecutionApi>());
-        }
-
-        [Test]
-        public void Create_SqlBackgroundExecutionApi()
-        {
-            var api = _factory.Api<SqlBackgroundExecutionApi>();
-
-            Assert.That(api, Is.Not.Null);
-            Assert.That(api, Is.InstanceOf<SqlBackgroundExecutionApi>());
-        }
-
-        [Test]
-        public void Create_SqlExecutionApi()
-        {
-            var api = _factory.Api<SqlExecutionApi>();
-
-            Assert.That(api, Is.Not.Null);
-            Assert.That(api, Is.InstanceOf<SqlExecutionApi>());
-        }
-
+        /* Add this test for and interface of an Api within Finbourne.Luminesce.Sdk.Api
         [Test]
         public void Api_From_Interface()
         {
-            var api = _factory.Api<ISqlExecutionApi>();
+            var api = _factory.Api<IXXXApi>();
 
             Assert.That(api, Is.Not.Null);
-            Assert.That(api, Is.InstanceOf<SqlExecutionApi>());
+            Assert.That(api, Is.InstanceOf<IXXXApi>());
         }
+        */
 
         [Test]
         public void Invalid_Requested_Api_Throws()
