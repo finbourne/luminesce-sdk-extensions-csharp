@@ -13,7 +13,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- The highest stable version. -->
-    <PackageReference Include="Finbourne.Luminesce.Sdk" Version="*" />
+    <PackageReference Include="Finbourne.Luminesce.Sdk" Version="1.5.180" />
     <PackageReference Include="JsonSubTypes" Version="1.8.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
