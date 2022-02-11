@@ -129,15 +129,13 @@ namespace Finbourne.Luminesce.Sdk.Extensions
                     new MediaTypeWithQualityHeaderValue("application/json"));
 
                 // Build parameters
-                var parameters = new Dictionary<string, string>
-                {
-                    ["grant_type"] = "password",
-                    ["username"] = apiConfig.Username,
-                    ["password"] = apiConfig.Password,
-                    ["client_id"] = apiConfig.ClientId,
-                    ["client_secret"] = apiConfig.ClientSecret,
-                    ["scope"] = "openid client groups offline_access"
-                };
+                var parameters = new Dictionary<string, string>();
+                parameters["grant_type"] = "password";
+                parameters["username"] = apiConfig.Username;
+                parameters["password"] = apiConfig.Password;
+                parameters["client_id"] = apiConfig.ClientId;
+                parameters["client_secret"] = apiConfig.ClientSecret;
+                parameters["scope"] = "openid client groups offline_access";
 
                 var tokenRequest =
                     new HttpRequestMessage(HttpMethod.Post, apiConfig.TokenUrl)
@@ -197,12 +195,10 @@ namespace Finbourne.Luminesce.Sdk.Extensions
                     new MediaTypeWithQualityHeaderValue("application/json"));
 
                 // Build parameters
-                var parameters = new Dictionary<string, string>
-                {
-                    ["grant_type"] = "refresh_token",
-                    ["scope"] = "openid client groups offline_access",
-                    ["refresh_token"] = refreshToken
-                };
+                var parameters = new Dictionary<string, string>();
+                parameters["grant_type"] = "refresh_token";
+                parameters["scope"] = "openid client groups offline_access";
+                parameters["refresh_token"] = refreshToken;
 
                 var tokenRequest =
                     new HttpRequestMessage(HttpMethod.Post, apiConfig.TokenUrl)
