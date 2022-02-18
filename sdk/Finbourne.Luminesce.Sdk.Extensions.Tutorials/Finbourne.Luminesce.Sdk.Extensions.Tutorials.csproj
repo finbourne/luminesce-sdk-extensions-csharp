@@ -5,14 +5,14 @@
     <IsPackable>false</IsPackable>
     <Authors>engineering@finbourne.com</Authors>
     <Company>FINBOURNE Technology Limited</Company>
-	  <Product>LUSID</Product>
-	  <Description>LUSID Luminesce data virtualisation service SDK Extensions - Tutorials project</Description>
+	  <Product>Luminesce</Product>
+	  <Description>FINBOURNE Luminesce data virtualisation service SDK Extensions - Tutorials project</Description>
 	  <RepositoryUrl>https://github.com/finbourne/finbourne-luminesce-sdk-extensions-csharp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   <ItemGroup>
     <!-- The highest stable version. -->
-    <PackageReference Include="Finbourne.Luminesce.Sdk" Version="1.5.180" />
+    <PackageReference Include="Finbourne.Luminesce.Sdk.Preview" Version="1.5.180" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
