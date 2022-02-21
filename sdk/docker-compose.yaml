@@ -2,10 +2,10 @@ version: "3"
 
 services:
 
-  luminesce-sdk-extensions-csharp-preview-test:
+  luminesce-sdk-extensions-csharp-test:
     build: .
-    container_name: luminesce-sdk-extensions-csharp-preview-test
-    image: finbourne/luminesce-sdk-extensions-csharp-preview-test
+    container_name: luminesce-sdk-extensions-csharp-test
+    image: finbourne/luminesce-sdk-extensions-csharp-test
     environment:
       - FBN_TOKEN_URL
       - FBN_USERNAME

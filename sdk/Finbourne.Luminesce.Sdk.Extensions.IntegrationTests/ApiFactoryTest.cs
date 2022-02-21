@@ -4,7 +4,7 @@ using Finbourne.Luminesce.Sdk.Model;
 using NUnit.Framework;
 using System;
 
-namespace Finbourne.Luminesce.Sdk.Extensions.Tutorials
+namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
 {
     public class ApiFactoryTest
     {

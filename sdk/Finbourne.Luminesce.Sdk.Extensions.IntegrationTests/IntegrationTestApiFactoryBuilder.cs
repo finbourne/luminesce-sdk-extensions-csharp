@@ -1,6 +1,6 @@
 using System.IO;
 
-namespace Finbourne.Luminesce.Sdk.Extensions.Tutorials
+namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
 {
     public  class IntegrationTestApiFactoryBuilder
     {

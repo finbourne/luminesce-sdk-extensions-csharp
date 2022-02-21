@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finbourne.Luminesce.Sdk.Ext
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finbourne.Luminesce.Sdk.Extensions.Tests", "Finbourne.Luminesce.Sdk.Extensions.Tests\Finbourne.Luminesce.Sdk.Extensions.Tests.csproj", "{E658E4D6-C66E-4F29-BAF5-794266C2175F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finbourne.Luminesce.Sdk.Extensions.Tutorials", "Finbourne.Luminesce.Sdk.Extensions.Tutorials\Finbourne.Luminesce.Sdk.Extensions.Tutorials.csproj", "{CE39351F-6BC2-4D6B-B888-9E1DC3E8A7FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finbourne.Luminesce.Sdk.Extensions.IntegrationTests", "Finbourne.Luminesce.Sdk.Extensions.IntegrationTests\Finbourne.Luminesce.Sdk.Extensions.IntegrationTests.csproj", "{CE39351F-6BC2-4D6B-B888-9E1DC3E8A7FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
