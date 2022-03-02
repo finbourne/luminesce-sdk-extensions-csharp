@@ -25,7 +25,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions.Tests
             ApiConfiguration apiConfig = new ApiConfiguration
             {
                 TokenUrl = "http://finbourne.com",
-                ApiUrl = "xyz"
+                LuminesceUrl = "xyz"
             };
 
             Assert.That(

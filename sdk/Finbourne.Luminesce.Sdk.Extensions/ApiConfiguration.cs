@@ -33,9 +33,9 @@ namespace Finbourne.Luminesce.Sdk.Extensions
         public string ClientSecret { get;  set; }
 
         /// <summary>
-        /// Api Url
+        /// Luminesce Api Url
         /// </summary>
-        public string ApiUrl { get; set; }
+        public string LuminesceUrl { get; set; }
 
         /// <summary>
         /// Client Application name
@@ -53,7 +53,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions
                    string.IsNullOrEmpty(Password) ||
                    string.IsNullOrEmpty(ClientId) ||
                    string.IsNullOrEmpty(ClientSecret) ||
-                   string.IsNullOrEmpty(ApiUrl);
+                   string.IsNullOrEmpty(LuminesceUrl);
         }
 
         /// <summary>
@@ -83,9 +83,9 @@ namespace Finbourne.Luminesce.Sdk.Extensions
             {
                 missingConfig.Add(nameof(ClientSecret));
             } 
-            if (string.IsNullOrEmpty(ApiUrl))
+            if (string.IsNullOrEmpty(LuminesceUrl))
             {
-                missingConfig.Add(nameof(ApiUrl));
+                missingConfig.Add(nameof(LuminesceUrl));
             }
             return missingConfig;            
         }

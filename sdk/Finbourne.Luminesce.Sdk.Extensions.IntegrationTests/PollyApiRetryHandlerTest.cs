@@ -43,7 +43,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
             _httpListener.Prefixes.Add(ListenerUriPrefix);
 
             var testApiConfig = IntegrationTestApiFactoryBuilder.CreateApiConfiguration("secrets.json");
-            testApiConfig.ApiUrl = ListenerUriPrefix;
+            testApiConfig.LuminesceUrl = ListenerUriPrefix;
 
             _apiFactory = new ApiFactory(testApiConfig);
 
