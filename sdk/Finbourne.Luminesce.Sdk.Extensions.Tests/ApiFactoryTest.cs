@@ -20,7 +20,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions.Tests
         }
 
         [Test]
-        public void InvalidApiUrl_ThrowsException()
+        public void InvalidLuminesceUrl_ThrowsException()
         {
             ApiConfiguration apiConfig = new ApiConfiguration
             {
