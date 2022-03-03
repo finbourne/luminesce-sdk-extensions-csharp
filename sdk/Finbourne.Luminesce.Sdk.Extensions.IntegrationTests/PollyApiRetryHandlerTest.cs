@@ -300,7 +300,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
 
         }
         
-        [Test]
+       [Test]
         public void UsePolicyWrap_WhenCallingApiMethodHitsRateLimit_BothDefaultAndRateLimitPoliciesAreUsed()
         {
             const int retryAfterResponseCode = 429;
@@ -309,13 +309,13 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
             
             // First Response
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() {[HttpResponseHeader.RetryAfter] = "1"});
             // Second Response - same, triggers another retry
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() {[HttpResponseHeader.RetryAfter] = "1"});
             
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() {[HttpResponseHeader.RetryAfter] = "1"});
 
             AddMockHttpResponseToQueue(_httpListener, statusCode: statusCodeResponseDefaultRetry, responseContent: "");
             
@@ -340,13 +340,13 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
             
             // First Response
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "5" });
             // Second Response - same, triggers another retry
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "7" });
             
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "9" });
             // 4 time lucky:
             AddMockHttpResponseToQueue(_httpListener, statusCode: 200, responseContent: _mockResponse.ToJson());
 
@@ -355,7 +355,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
             // Calling the API triggers the flow that triggers polly
             var sdkResponse = _apiFactory.Api<HistoricallyExecutedQueriesApi>().GetProgressOfHistory("code");
             sw.Stop();
-            Assert.That(sw.ElapsedMilliseconds, Is.GreaterThanOrEqualTo(1000*9)); // retry after was respected
+            Assert.That(sw.ElapsedMilliseconds, Is.GreaterThanOrEqualTo(1000*21)); // retry after was respected
             Assert.That(sdkResponse, Is.EqualTo(_mockResponse));
             Assert.That(_apiCallCount, Is.EqualTo(expectedNumberOfApiCalls));
         }
@@ -539,7 +539,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
             Assert.That(exception.ErrorCode, Is.EqualTo(0));
         }
         
-                  [Test]
+  [Test]
         public async Task UsePolicyWrapAsync_WhenCallingApiMethodHitsRateLimit_BothDefaultAndRateLimitPoliciesAreUsed()
         {
             const int retryAfterResponseCode = 429;
@@ -548,13 +548,13 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
             
             // First Response
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "1" });
             // Second Response - same, triggers another retry
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "1" });
             
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "1" });
 
             AddMockHttpResponseToQueue(_httpListener, statusCode: statusCodeResponseDefaultRetry, responseContent: "");
             
@@ -579,13 +579,13 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
             
             // First Response
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "5" });
             // Second Response - same, triggers another retry
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "7" });
             
             AddMockHttpResponseToQueue(_httpListener, statusCode: retryAfterResponseCode, responseContent: "", 
-                0, new Dictionary<HttpResponseHeader, string>() );
+                0, new Dictionary<HttpResponseHeader, string>() { [HttpResponseHeader.RetryAfter] = "9" });
             // 4 time lucky:
             AddMockHttpResponseToQueue(_httpListener, statusCode: 200, responseContent: _mockResponse.ToJson());
 
@@ -594,7 +594,7 @@ namespace Finbourne.Luminesce.Sdk.Extensions.IntegrationTests
             // Calling API triggers the flow that triggers polly
             var sdkResponse = await _apiFactory.Api<HistoricallyExecutedQueriesApi>().GetProgressOfHistoryAsync("code");
             sw.Stop();
-            Assert.That(sw.ElapsedMilliseconds, Is.GreaterThanOrEqualTo(1000*9)); // retry after was respected
+            Assert.That(sw.ElapsedMilliseconds, Is.GreaterThanOrEqualTo(1000*21)); // retry after was respected
             Assert.That(sdkResponse, Is.EqualTo(_mockResponse));
             Assert.That(_apiCallCount, Is.EqualTo(expectedNumberOfApiCalls));
         }
