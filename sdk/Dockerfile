@@ -9,7 +9,4 @@ COPY Finbourne.Luminesce.Sdk.Extensions.Tests/Finbourne.Luminesce.Sdk.Extensions
 COPY Finbourne.Luminesce.Sdk.Extensions.IntegrationTests/Finbourne.Luminesce.Sdk.Extensions.IntegrationTests.csproj /usr/src/Finbourne.Luminesce.Sdk.Extensions.IntegrationTests/
 RUN dotnet restore Finbourne.Luminesce.Sdk.Extensions
 
-ENV FBN_LUMINESCE_API_URL ${FBN_LUMINESCE_API_URL}
-
-# ENTRYPOINT [ "/bin/bash" ]
-ENTRYPOINT dotnet test --configuration Release --verbosity normal Finbourne.Luminesce.Sdk.Extensions
+ENTRYPOINT dotnet test --configuration Release --verbosity normal
