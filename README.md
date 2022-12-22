@@ -17,6 +17,10 @@ The NuGet package for the FINBOURNE Luminesce SDK extensions can installed from 
 $ dotnet add package Finbourne.Luminesce.Sdk.Extensions
 ```
 
+## Contributing
+
+We welcome contributions from our community. See our [contributing guide](docs/CONTRIBUTING.md) for information on how to contribute to and report issues with the Luminesce SDK Extensions C# repository.
+
 ## Build Status 
 
 | branch | status |
