@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>0.864.0</Version>
+    <Version>0.865.0</Version>
     <Authors>engineering@finbourne.com</Authors>
     <Company>FINBOURNE Technology Limited</Company>
 	  <Product>Luminesce</Product>
@@ -11,7 +11,7 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Finbourne.Luminesce.Sdk.Preview" Version="1.14.405" />
+    <PackageReference Include="Finbourne.Luminesce.Sdk.Preview" Version="1.14.406" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
