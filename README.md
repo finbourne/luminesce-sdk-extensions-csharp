@@ -1,5 +1,6 @@
+![LUSID_by_Finbourne](./resources/Finbourne_Logo_Teal.svg)
+
 # LUSID<sup>®</sup> Luminesce SDK Extensions C#
-![LUSID by Finbourne](https://content.finbourne.com/LUSID_repo.png)
 
 This is the C# SDK Extensions to accompany the [C# SDK (Preview) for the Luminesce application](https://github.com/finbourne/luminesce-sdk-csharp-preview). Luminesce is a SQL-based data virtualisation service (read/write data to multiple sources, including LUSID).
 
